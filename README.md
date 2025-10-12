@@ -145,28 +145,3 @@ Check `requirements.txt` for all packages.
 * crispy-bootstrap4 2022.1
 
 ---
-
-## 📝 License
-
-MIT License – see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🚀 Contribution
-
-Contributions are welcome!
-
-1. Fork the repository
-2. Create a branch (`git checkout -b feature-name`)
-3. Commit your changes (`git commit -m "Add feature"`)
-4. Push to branch (`git push origin feature-name`)
-5. Open a pull request
-
----
-
-```
-
-If you want, I can **also create a ready-to-use “Live Demo & Features” section with placeholders for screenshots, links, and GIFs** so your README looks like a professional project page on GitHub.  
-
-Do you want me to do that next?
-```
