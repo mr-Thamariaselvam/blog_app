@@ -85,6 +85,7 @@
       </header>
 
       <!-- Category Nav -->
+      {% if show_categories %}
       <div class="nav-scroller py-2 mb-4 border-bottom">
         <nav class="nav d-flex justify-content-between w-80">
           {% for cat in categories %}
@@ -97,6 +98,7 @@
           {% endfor %}
         </nav>
       </div>
+      {% endif %}
 
       <!-- Main Content -->
       {% block content %} {% endblock %}
