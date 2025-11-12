@@ -1,0 +1,223 @@
+/* -------------------------------
+   General Typography & Layout
+--------------------------------*/
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #212529;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+p {
+  font-weight: 400;
+}
+
+/* Full height helper */
+.min-vh-100 {
+  min-height: 100vh !important;
+}
+
+/* -------------------------------
+   Header
+--------------------------------*/
+.blog-header {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.blog-header-logo {
+  font-family: "Roboto", sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-header-logo:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+/* -------------------------------
+   Display Headings
+--------------------------------*/
+.display-4 {
+  font-size: 2.5rem;
+}
+@media (min-width: 768px) {
+  .display-4 {
+    font-size: 3rem;
+  }
+}
+
+/* -------------------------------
+   Layout Helpers
+--------------------------------*/
+.flex-auto {
+  flex: 0 0 auto;
+}
+
+.h-250 {
+  height: 250px;
+}
+@media (min-width: 768px) {
+  .h-md-250 {
+    height: 250px;
+  }
+}
+
+/* -------------------------------
+   Pagination
+--------------------------------*/
+.blog-pagination {
+  margin-bottom: 4rem;
+}
+
+/* -------------------------------
+   Blog Posts
+--------------------------------*/
+.blog-post {
+  margin-bottom: 4rem;
+}
+.blog-post-title {
+  font-size: 2.5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+.blog-post-meta {
+  margin-bottom: 1.25rem;
+  color: #727272;
+}
+
+/* -------------------------------
+   Footer
+--------------------------------*/
+.blog-footer {
+  padding: 2.5rem 0;
+  color: #727272;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: 0.05rem solid #e5e5e5;
+}
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+
+/* -------------------------------
+   Navigation / Categories
+--------------------------------*/
+.nav.navbar-nav .category-link,
+.nav.d-flex .category-link,
+.nav .nav-link.category-link {
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 1.1rem !important;
+  color: #333 !important;
+  position: relative;
+  transition: color 0.2s ease-in-out;
+  text-transform: capitalize;
+  padding-bottom: 0.4rem;
+}
+
+/* Hover underline animation */
+.nav .category-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #ffc107;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav .category-link:hover {
+  color: #000 !important;
+}
+
+.nav .category-link:hover::after {
+  width: 50%;
+}
+
+/* Scrollable Navbar on small screens */
+.nav-scroller {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.nav-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+/* -------------------------------
+   Sidebar
+--------------------------------*/
+.sidebar-container {
+  min-height: 80vh;
+  background-color: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* -------------------------------
+   Nav Pills (Sidebar Menu)
+--------------------------------*/
+.nav-pills {
+  border: 1px solid #eee;
+}
+
+.nav-pills .nav-link {
+  font-weight: 500;
+  color: #343a40 !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: #e9ecef;
+  transform: translateX(3px);
+}
+
+.active-link {
+  background-color: #ffc107 !important;
+  color: #212529 !important;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* -------------------------------
+   Icons Hover Effect
+--------------------------------*/
+.p-3 a i {
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+.p-3 a:hover i {
+  color: #ffc107;
+  transform: scale(1.1);
+}
+
+/* -------------------------------
+   Utilities
+--------------------------------*/
+.border-none {
+  border: none !important;
+}
+.header-btn {
+  padding: 0.5rem 1.5rem; /* vertical | horizontal padding */
+  font-size: 1rem; /* slightly larger font */
+  line-height: 1.5; /* adjust height */
+  border-radius: 0.5rem; /* rounded corners */
+  margin-left: 1rem;
+  width: 30%;
+}
