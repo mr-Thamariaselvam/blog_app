@@ -1,11 +1,48 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
 <div class="col-md-3">
-    <div class="nav flex-column nav-pills bg-light" aria-orientation="vertical">
-        <a href="{% url 'dashboard' %}" class="nav-link text-dark {% if '/dashboard/' == request.path %}bg-warning{% endif %}">Dashboard</a>
-        {% if perms.auth.view_user %}
-        <a href="{% url 'users' %}" class="nav-link text-dark {% if '/users/' in request.path %}bg-warning{% endif %}">Users</a>
-        {% endif %}
-        <a href="{% url 'categories' %}" class="nav-link text-dark {% if '/categories/' in request.path %}bg-warning{% endif %}">Categories</a>
-        <a href="{% url 'posts' %}" class="nav-link text-dark {% if '/posts/' in request.path %}bg-warning{% endif %}">Posts</a>
-        <a href="" class="nav-link text-dark">Logout</a>
-    </div>
+  <div
+    class="nav sidebar-container flex-column nav-pills shadow-sm rounded-3 p-3 vh-100"
+    aria-orientation="vertical"
+  >
+    <h5
+      class="text-center text-uppercase fw-bold mb-3 border-bottom pb-2 text-da"
+    >
+      Admin Menu
+    </h5>
+
+    <a
+      href="{% url 'dashboard' %}"
+      class="nav-link py-2 px-3 rounded {% if '/dashboard/' == request.path %}active-link{% else %}text-dark{% endif %}"
+    >
+      <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+    </a>
+
+    {% if perms.auth.view_user %}
+    <a
+      href="{% url 'users' %}"
+      class="nav-link py-2 px-3 rounded {% if '/users/' in request.path %}active-link{% else %}text-dark{% endif %}"
+    >
+      <i class="fas fa-users me-2"></i> Users
+    </a>
+    {% endif %}
+
+    <a
+      href="{% url 'categories' %}"
+      class="nav-link py-2 px-3 rounded {% if '/categories/' in request.path %}active-link{% else %}text-dark{% endif %}"
+    >
+      <i class="fas fa-list-alt me-2"></i> Categories
+    </a>
+
+    <a
+      href="{% url 'posts' %}"
+      class="nav-link py-2 px-3 rounded {% if '/posts/' in request.path %}active-link{% else %}text-dark{% endif %}"
+    >
+      <i class="fas fa-newspaper me-2"></i> Posts
+    </a>
+  </div>
 </div>

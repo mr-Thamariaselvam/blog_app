@@ -22,6 +22,7 @@ def posts_by_category(request, category_id):
     context = {
         'posts': posts,
         'category': category,
+        'show_categories': True,
     }
     return render(request, 'posts_by_category.html', context)
 
@@ -44,6 +45,7 @@ def blogs(request, slug):
         'single_blog': single_blog,
         'comments': comments,
         'comment_count': comment_count,
+        'show_categories': True,
     }
     return render(request, 'blogs.html', context)
 
@@ -55,5 +57,6 @@ def search(request):
     context = {
         'blogs': blogs,
         'keyword': keyword,
+        'show_categories': True,
     }
     return render(request, 'search.html', context)

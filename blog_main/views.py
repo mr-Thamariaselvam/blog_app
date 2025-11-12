@@ -20,6 +20,7 @@ def home(request):
         'featured_posts': featured_posts,
         'posts': posts,
         'about': about,
+        'show_categories': True,
     }
     return render(request, 'home.html', context)
 

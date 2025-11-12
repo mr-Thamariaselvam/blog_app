@@ -1,29 +1,41 @@
-{% extends 'base.html' %}
-
-
-{% block content %}
-{% load crispy_forms_tags %}
+{% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
 
 <div class="row">
-    <!-- Left sidebar -->
-    <!-- load the sidebar here -->
-    {% include 'dashboard/sidebar.html' %}
+  <!-- Left sidebar -->
+  {% include 'dashboard/sidebar.html' %}
 
-    <!-- Right side content -->
-    <div class="col-md-9">
-        {% if perms.auth.add_user %}
-        <h2>Add New User</h2>
-        
-        <form action="{% url 'add_user' %}" method="POST" >
-            {% csrf_token %}
-            {{ form | crispy }}
-            <button type="submit" class="btn btn-warning">Submit</button>
+  <!-- Right side content -->
+  <div class="col-md-9">
+    {% if perms.auth.add_user %}
+    <div class="card shadow-sm border rounded-4 p-4">
+      <div class="card-header bg-warning text-white rounded-top-4">
+        <h3 class="mb-0 text-center">Add New User</h3>
+      </div>
+      <div class="card-body">
+        <form action="{% url 'add_user' %}" method="POST">
+          {% csrf_token %} {{ form|crispy }}
+          <div class="text-center mt-3">
+            <button type="submit" class="btn btn-warning btn-lg px-4">
+              Submit
+            </button>
+          </div>
         </form>
-        <br>
-        {% else %}
-        <h5>You do not have permission to view this page</h5>
-        {% endif %}
+      </div>
     </div>
+    {% else %}
+    <div class="alert alert-danger mt-4" role="alert">
+      <h5 class="mb-0">You do not have permission to view this page</h5>
+    </div>
+    {% endif %}
+  </div>
 </div>
+
+<style>
+  /* Optional: smooth card hover effect */
+  .card:hover {
+    transform: scale(1.01);
+    transition: transform 0.2s;
+  }
+</style>
 
 {% endblock %}

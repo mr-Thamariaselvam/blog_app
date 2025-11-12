@@ -1,24 +1,43 @@
 from django.shortcuts import get_object_or_404, redirect, render
 
-from blogs.models import Blog, Category
+from blogs.models import Blog, Category,Comment
 from django.contrib.auth.decorators import login_required
 
 from .forms import AddUserForm, BlogPostForm, CategoryForm, EditUserForm
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
 
+from django.utils import timezone
+from datetime import timedelta
+
 
 @login_required(login_url='login')
 def dashboard(request):
+    # Counts
     category_count = Category.objects.all().count()
     blogs_count = Blog.objects.all().count()
+    drafts_count = Blog.objects.filter(status='draft').count()
+    
+    # New categories today
+    today = timezone.now().date()
+    new_categories_today = Category.objects.filter(created_at__date=today).count()
+    
+    # New posts this week
+    week_ago = timezone.now() - timedelta(days=7)
+    new_posts_week = Blog.objects.filter(created_at__gte=week_ago).count()
+    
+    # Comments count
+    comments_count = Comment.objects.all().count()  # total comments
 
     context = {
         'category_count': category_count,
         'blogs_count': blogs_count,
+        'drafts_count': drafts_count,
+        'new_categories_today': new_categories_today,
+        'new_posts_week': new_posts_week,
+        'comments_count': comments_count,
     }
     return render(request, 'dashboard/dashboard.html', context)
-
 def categories(request):
     return render(request, 'dashboard/categories.html')
 

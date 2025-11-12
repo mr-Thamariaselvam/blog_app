@@ -1,25 +1,40 @@
-{% extends 'base.html' %}
-
-
-{% block content %}
-{% load crispy_forms_tags %}
+{% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
 
 <div class="row">
-    <!-- Left sidebar -->
-    <!-- load the sidebar here -->
-    {% include 'dashboard/sidebar.html' %}
+  <!-- Left sidebar -->
+  {% include 'dashboard/sidebar.html' %}
 
-    <!-- Right side content -->
-    <div class="col-md-9">
-        <h2>Edit Blog Post</h2>
-        
-        <form action="{% url 'edit_post' post.id %}" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form | crispy }}
-            <button type="submit" class="btn btn-warning">Submit</button>
+  <!-- Right side content -->
+  <div class="col-md-9 mt-4">
+    <div class="card shadow-sm border rounded-4 p-4">
+      <div class="card-header bg-warning text-white rounded-top-4 text-center">
+        <h4 class="mb-0">Edit Blog Post</h4>
+      </div>
+      <div class="card-body">
+        <form
+          action="{% url 'edit_post' post.id %}"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          {% csrf_token %} {{ form|crispy }}
+
+          <div class="text-center mt-3">
+            <button type="submit" class="btn btn-warning btn-lg px-4">
+              Submit
+            </button>
+          </div>
         </form>
-        <br>
+      </div>
     </div>
+  </div>
 </div>
+
+<style>
+  /* Subtle card hover effect */
+  .card:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s;
+  }
+</style>
 
 {% endblock %}

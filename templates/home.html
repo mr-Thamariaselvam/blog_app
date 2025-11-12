@@ -4,18 +4,20 @@
 
   {% for post in featured_posts %}
     {% if forloop.first %}
-    <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark" style="background-image: url({{ post.featured_image.url }});background-blend-mode: overlay;background-size:cover;">
+   <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark"
+     style="background-image: url('{{ post.featured_image.url }}'); background-size: cover; background-position: center; background-blend-mode: overlay;">
+
       <div class="col-md-8 px-0">
-        <h1 class="display-4 font-italic">{{ post.title }}</h1>
+        <h1 class="display-4">{{ post.title }}</h1>
         <p class="lead my-3">{{ post.short_description | truncatewords:25 }}</p>
-        <p class="lead mb-0"><a href="{% url 'blogs' post.slug  %}" class="text-white font-weight-bold">Continue reading...</a></p>
+        <p class="lead mb-0"><a href="{% url 'blogs' post.slug  %}" class="text-white font-weight-bold">Continue Reading...</a></p>
       </div>
     </div>
     {% endif %}
   {% endfor %}
 
   <!-- Featured Posts -->
-  <h3 class="text-uppercase text-warning" style="letter-spacing: 2px;">Featured Posts</h3>
+  <h3 class="text-uppercase text-warning">Featured Posts</h3>
   <div class="row mb-2">
     {% for post in featured_posts %}
       {% if not forloop.first %}
@@ -35,7 +37,7 @@
 
 
   <!-- Recent Articles -->
-  <h3 class="text-uppercase text-warning" style="letter-spacing: 2px;">Recent Articles</h3>
+  <h3 class="text-uppercase text-warning">Recent Articles</h3>
   <main role="main" class="container p-0">
     <div class="row">
       <div class="col-md-8 blog-main">
@@ -53,20 +55,44 @@
 
       <aside class="col-md-4 blog-sidebar">
         <div class="p-3 mb-3 bg-light rounded">
-          <h4 class="font-italic">{{ about.about_heading }}</h4>
+          <h4 class="font-bold">{{ about.about_heading }}</h4>
           <p class="mb-0">{{ about.about_description }}</p>
         </div>
 
-        {% if social_links %}
-        <div class="p-3">
-          <h4 class="font-italic">Follow Us</h4>
-          <ol class="list-unstyled">
-            {% for i in social_links %}
-            <li><a href="{{ i.link }}" target="_blank">{{ i.platform }}</a></li>
-            {% endfor %}
-          </ol>
-        </div>
+       {% if social_links %}
+          <div class="p-3">
+          <h4 class="mb-3">Follow Us</h4>
+  <div class="d-flex flex-wrap gap-3">
+    {% for i in social_links %}
+      <a
+        href="{{ i.link }}"
+        target="_blank"
+        class="text-dark fs-5 mx-2 d-flex align-items-center border-none"
+        title="{{ i.platform }}"
+      >
+        {% if "facebook" in i.platform|lower %}
+          <i class="fa fa-facebook-square me-2 mr-2"></i> Facebook
+        {% elif "twitter" in i.platform|lower %}
+          <i class="fa fa-twitter-square me-2 mr-2"></i> Twitter
+        {% elif "instagram" in i.platform|lower %}
+          <i class="fa fa-instagram me-2 mr-2"></i> Instagram
+        {% elif "linkedin" in i.platform|lower %}
+          <i class="fa fa-linkedin-square me-2 mr-2"></i> LinkedIn
+        {% elif "youtube" in i.platform|lower %}
+          <i class="fa fa-youtube-play me-2 mr-2"></i> YouTube
+        {% elif "github" in i.platform|lower %}
+          <i class="fa fa-github me-2 mr-2"></i> GitHub
+        {% else %}
+          <i class="fa fa-globe me-2 mr-2"></i> Website
         {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+          </div>
+
+        {% endif %}
+
+
       </aside><!-- /.blog-sidebar -->
 
     </div><!-- /.row -->
