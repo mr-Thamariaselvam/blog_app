@@ -1,7 +1,11 @@
+Perfect! We can update the README to **highlight your live deployed dashboard** clearly. Here’s the revised version:
+
+---
+
 # Django Blog Project
 
-[![Python](https://img.shields.io/badge/python-3.11-blue)](https://www.python.org/) 
-[![Django](https://img.shields.io/badge/django-4.2-green)](https://www.djangoproject.com/) 
+[![Python](https://img.shields.io/badge/python-3.11-blue)](https://www.python.org/)
+[![Django](https://img.shields.io/badge/django-4.2-green)](https://www.djangoproject.com/)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 
 A full-featured **Django blogging platform** with categories, blog posts, comments, and user management. The project allows creating featured posts, uploading images, and managing blog content via an admin dashboard.
@@ -10,32 +14,27 @@ A full-featured **Django blogging platform** with categories, blog posts, commen
 
 ## 🌟 Features
 
-- User authentication (superuser & regular users)  
-- CRUD operations for **categories** and **blog posts**  
-- Blog posts with title, slug, featured image, short description, body, status (draft/published), and “is featured” flag  
-- Comment system for each blog post  
-- Responsive templates and modern design  
-- Admin dashboard for easy management of content  
+* User authentication (superuser & regular users)
+* CRUD operations for **categories** and **blog posts**
+* Blog posts with title, slug, featured image, short description, body, status (draft/published), and “is featured” flag
+* Comment system for each blog post
+* Responsive templates and modern design
+* Admin dashboard for easy management of content
 
 ---
 
-## 🖼 Screenshots
+## 🔗 Live Demo
 
-**Homepage**  
-![Homepage](screenshorts/Home.png)
-**Admin Dashboard**  
-![Admin](screenshorts/AdminDashboard.png)
-![Blog List](screenshorts/Adminblogs.png)
+Access the live dashboard here:
+[**https://citizen-rights.onrender.com/dashboard/**](https://citizen-rights.onrender.com/dashboard/)
 
-**Blog Post Page**  
-![Blog Post](screenshorts/blog.png)
+> You can log in using your superuser credentials to manage blogs, categories, and comments.
 
 ---
 
 ## 📂 Project Structure
 
 ```
-
 django-blog-project/
 ├── blogs/                 # Blog app: models, views, templates
 ├── dashboards/            # Admin dashboard app
@@ -46,18 +45,18 @@ django-blog-project/
 ├── manage.py
 ├── requirements.txt
 └── db.sqlite3
-
-````
+```
 
 ---
 
 ## ⚙️ Installation & Setup
 
 1. **Clone the repository**
+
 ```bash
 git clone https://github.com/dev-rathankumar/django-blog-project.git
 cd django-blog-project
-````
+```
 
 2. **Create a virtual environment**
 
