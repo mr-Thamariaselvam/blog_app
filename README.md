@@ -1,6 +1,4 @@
-Perfect! We can update the README to **highlight your live deployed dashboard** clearly. Here’s the revised version:
 
----
 
 # Django Blog Project
 
